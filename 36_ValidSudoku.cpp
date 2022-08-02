@@ -4,7 +4,7 @@
 class Solution
 {
 public:
-    bool isValidSudoku(vector<vector<char>> &board)
+    bool isValidSudoku(vector< vector < char > > &board)
     {
 
         for (int i = 0; i < board.size() + 1; i++)
@@ -46,14 +46,14 @@ public:
                 ptr++ &&ptr2--;
             }
         }
-        int row = 0,col = 0;
-        while ( col < board.size() + 1)
+        int row = 0, col = 0;
+        while (col < board.size() + 1)
         {
             char *buff = new char[board.size() + 1];
             char *ptr = &board[row][col];
             char *ptr2 = &board[board.size() - 1][col];
 
-            while ( row < board[col].size() + 1 / 2)
+            while (row < board[col].size() + 1 / 2)
             {
                 if (ptr != ptr2)
                 {

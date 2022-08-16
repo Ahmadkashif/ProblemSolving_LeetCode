@@ -46,30 +46,5 @@ void printRow(int depth,int spaces)
     cout << endl;
     return;
     
-    
-    rtyuiol
-        ghjkl;'
-            jkl;'
-                kl;'
-                    kl;'
-                        l;'
-                            l;'
-                                l;'
-                                    kl;'kl;'
-                                        jkl;'kl;'
-                                            kl;'
-                                                kl;'
-                                                    l;'
-                                                        kl;'
-                                                            kl;'
-                                                                kl;'
-                                                                    jkl;'
-                                                                        jkl;'
-                                                                            jkl;'
-                                                                                jkl;'
-                                                                                    jkl;'
-                                                                                        jkl
-                                                                                        kl;'
-                                                                                            kl;'
                                                                                                 
 }

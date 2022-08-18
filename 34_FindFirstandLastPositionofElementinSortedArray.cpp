@@ -1,27 +1,22 @@
 class Solution {
 public:
     vector<int> searchRange(vector<int>& nums, int t) {
-        vector<int> res (2, -1);
-        int s = 0 , e = nums.size() -1, mid;
-        
-        while(s < e){
-            mid = (e - s)/2 + s;
-            
-            if(nums[mid] == t){
-                if(nums[mid-1] < t){
-                    res[0] = mid -1;
-                    
-                }
+        vector<int> res(2, -1);
+        int x = 0;
+        for(int i = 0; i < nums.size(); i++)
+            if( nums[i] == t){
+                res[x++] = i;
                 break;
             }
-            else if(nums[mid] < t){
-                s = mid + 1;
-            }
-            else
-                e = mid - 1;
-        }
-        return res;
+                
         
+        for(int i = nums.size()-1; i >= 0; i--)
+            if(nums[i] == t)
+            {
+                res[x] = i;
+                break;
+            }
+        return res;
     }
 };
 

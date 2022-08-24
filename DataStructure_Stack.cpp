@@ -1,42 +1,51 @@
-#include<iostream>
-#include<stack>
+#include <iostream>
+#include <stack>
 using namespace std;
 
-class Stack {
-    //properties
-    public:
-        int *arr;
-        int top;
-        int size;
+class Stack
+{
+    // properties
+public:
+    int *arr;
+    int top;
+    int size;
 
     // behaviour
-    Stack(int size) {
-        this -> size = size;
+    Stack(int size)
+    {
+        this->size = size;
         arr = new int[size];
         top = -1;
     }
 
-    void push( int element) {
-        if(size - top > 1) {
+    void push(int element)
+    {
+        if (size - top > 1)
+        {
             top++;
             arr[top] = element;
         }
-        else{
+        else
+        {
             cout << "Stack OverFlow" << endl;
         }
     }
 
-    void pop() {
-        if(top >=0 ) {
+    void pop()
+    {
+        if (top >= 0)
+        {
             top--;
         }
-        else{
+        else
+        {
             cout << "Stack UnderFlow" << endl;
         }
     }
 
-    int peek() {
-        if(top >=0 )
+    int peek()
+    {
+        if (top >= 0)
             return arr[top];
         else
         {
@@ -45,20 +54,21 @@ class Stack {
         }
     }
 
-    bool isEmpty() {
-        if( top == -1) {
+    bool isEmpty()
+    {
+        if (top == -1)
+        {
             return true;
         }
-        else{
+        else
+        {
             return false;
         }
     }
-
 };
 
-
-int main() {
-
+int main()
+{
 
     Stack st(5);
 
@@ -83,14 +93,15 @@ int main() {
 
     cout << st.peek() << endl;
 
-    if(st.isEmpty()) {
+    if (st.isEmpty())
+    {
         cout << "Stack is Empty mere dost " << endl;
     }
-    else{
+    else
+    {
         cout << "Stack is not Empty mere dost " << endl;
     }
 
-    
     /*
     //creation of stack
     stack<int> s;

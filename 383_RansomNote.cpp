@@ -1,7 +1,17 @@
-approach 1:
-    use hashmap for string2
-    construct a map for all 26 letters and their frequency on string one
-    then iterate over string 1 and deduct all frequencies of letters one by one if found, 
-    if not found simply return false
-    else continue;
-    
+class Solution {
+public:
+    bool canConstruct(string ran, string mag) {
+        map<char,int> m;
+        for(char c: mag)
+            m[c]++;
+        
+        for(char c: ran)
+        {
+            if(m[c])
+                m[c]--;
+            else
+                return false;
+        }
+        return true;
+    }
+};

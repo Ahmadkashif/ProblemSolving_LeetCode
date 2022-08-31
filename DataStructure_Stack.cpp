@@ -1,5 +1,18 @@
 #include <iostream>
 #include <stack>
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode() : val(0), next(nullptr) {}
+    ListNode(int x) : val(x), next(nullptr) {}
+    ListNode(int x, ListNode *next) : val(x), next(next) {}
+};
+struct Node{
+    Node* next;
+    int val;
+    Node(){};
+    Node(int, Node* ){}
+}
 using namespace std;
 
 class Stack
@@ -66,6 +79,12 @@ public:
         }
     }
 };
+
+class StackLinkedList{
+    private:
+        Node*
+    public:
+}
 
 int main()
 {

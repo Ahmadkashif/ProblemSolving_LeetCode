@@ -35,16 +35,27 @@
 // }
 
 #include <vector>
-#include <map>
 using namespace std;
 
-vector<int> twoNumberSum(vector<int> array, int targetSum) {
-  // Write your code here.
-  vector<int> res;
-  map<int, bool>, m;
-  for(int n : array){
-    
-  }
+vector<int> twoNumberSum(vector<int> array, int t) {
+  // Write your code here
+
+  vector<int> res(2);
+  unordered_set <int> set;
+  
+  for(int n: array)
+    {
+      if(set.find(t - n) == set.end()){
+        set.insert(n);
+      }
+      else{
+        res[0] = n;
+        res[1] = t-n;
+        return res;
+      }
+    }
+  
+  
   return {};
 }
 

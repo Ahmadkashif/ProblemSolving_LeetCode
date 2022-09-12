@@ -1,3 +1,5 @@
+// ----------- Solution 1 ------------ 
+// Passed
 #include <stack>
 
 using namespace std;
@@ -20,3 +22,4 @@ bool isValidSubsequence(vector<int> arr, vector<int> seq)
     }
     return false;
 }
+

@@ -34,10 +34,9 @@ public:
                     // if this mask and usedMask are mutually exclusive
                     if ((usedMask & mask) == 0)
                     {
-                         int validHalf = usedMask | mask;
+                        int validHalf = usedMask | mask;
                         validHalfSubsets[validHalf] = true;
-                        // if in the past we concluded that the other half is also a valid
-                        // half subset, DONE!
+                        
                         if (validHalfSubsets[all ^ validHalf])
                             return true;
                     }

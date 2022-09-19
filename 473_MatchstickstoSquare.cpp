@@ -9,12 +9,9 @@ public:
         if (sum % 4)
             return false;
         long sideLen = sum / 4;
-        // need to solve the problem of partitioning nums into four equal subsets each having
-        // sum equal to sideLen
+        
         vector<int> usedMasks;
-        // validHalfSubsets[i] == true iff the subset represented by bitmask i
-        // has sum == 2*sideLen, AND the subset represented by i can be further partitioned into
-        // two equal subsets. See below for how it is used.
+
         vector<bool> validHalfSubsets(1 << n, false);
 
         // E.g., if n = 5, (1 << 5 - 1) = 11111 represents the whole set
@@ -37,9 +34,7 @@ public:
                     // if this mask and usedMask are mutually exclusive
                     if ((usedMask & mask) == 0)
                     {
-                        // then they form a valid half subset whose sum is 2 * sideLen,
-                        // that can be further partitioned into two equal subsets (usedMask and mask)
-                        int validHalf = usedMask | mask;
+                         int validHalf = usedMask | mask;
                         validHalfSubsets[validHalf] = true;
                         // if in the past we concluded that the other half is also a valid
                         // half subset, DONE!

@@ -9,7 +9,14 @@ string tournamentWinner(vector<vector<string>> competitions, vector<int> results
     {
         if (results[i])
             m[arr[0]] += 1;
+        else
+            m[arr[1]] += 1;
     }
-    
-    return "";
+    vector<string> res(m.size());
+    for (map<string, int> iter i = m.begin(); i < m.end(); ++iter)
+    {
+        res[iter->second] = iter->first;
+    }
+
+    return res[res.size() - 1];
 }

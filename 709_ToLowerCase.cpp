@@ -1,6 +1,6 @@
 class Solution {
 public:
-    tring toLowerCase(string str) {        
+    string toLowerCase(string str) {        
     for (char& c : str) {
         if (c >= 'A' && c <= 'Z') c += 32;
     }

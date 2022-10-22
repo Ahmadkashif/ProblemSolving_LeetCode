@@ -1,16 +1,12 @@
 class Solution {
-    public String interpret(String command) {
-                 char[] arr = command.toCharArray();
-        StringBuilder sb = new StringBuilder();
-        for(int i=0;i<arr.length;i++){
-            if(arr[i]=='(' && arr[i+1]==')'){
-                sb.append('o');
-            }
-            else if(arr[i]=='(' && arr[i+1]=='a' && arr[i+2]=='l'&& arr[i+3]==')'){
-                sb.append("al");
-            }
-            else if (arr[i]=='G')
-                sb.append("G");
+public:
+    string interpret(string s) {
+        string ans;
+        for (int i = 0; i < s.size(); ) {
+            if (s[i] == 'G') ans += 'G', ++i;
+            else if (s[i + 1] == ')') ans += 'o', i += 2;
+            else ans += "al", i += 4;
         }
-        return sb.toString();    }
-}
+        return ans;
+    }
+};

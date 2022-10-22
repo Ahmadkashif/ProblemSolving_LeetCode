@@ -1,6 +1,13 @@
 class Solution {
-public:
-    int maximumWealth(vector<vector<int>>& accounts) {
-        
+    public int maximumWealth(int[][] accounts) {
+                int result = 0;
+        for (int[] a : accounts) {
+            int localMax=0;
+            for (int b : a) {
+                localMax+=b;
+            }
+            result = result>localMax? result:localMax;
+        }
+        return result;
     }
-};
+}

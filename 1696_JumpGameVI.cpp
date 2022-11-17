@@ -10,8 +10,8 @@ public:
                 d.pop_front();
 
             nums[i] += nums[d.front()];
-            
-            while (!d.empty() && nums[d.back()] <= nums[i])
+
+            while (! d.empty() && nums[d.back()] <= nums[i])
                 d.pop_back();
 
 

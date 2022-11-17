@@ -18,18 +18,13 @@ public:
     vector<int> getConcatenation(vector<int>& nums) {
         
         int n = nums.size();
-        vector<int> ans1 (n);
-        vector<int> ans2 (n);
+        vector<int> ans (n*2);
         // create an array of size 2 x n
         
         for (int i = 0; i < n ; i++)
         {
-            ans1[i] = nums[i];
-        }
-        
-        for ( int i =  0; i < n ; i++ )
-        {
-            ans2[i] = nums[i];
+            ans[i] = nums[i];
+            ans[i+n] = nums[i];
         }
         return ans;
     }

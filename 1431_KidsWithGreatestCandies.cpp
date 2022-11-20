@@ -29,6 +29,36 @@ vector<bool> kidsWithCandies(vector<int> &candies, int extraCandies)
         kidsWithCandies(candies, extraCandies);
         return results;
 }
+
+vector<bool> kidsWithCandies(vector<int> &c, int extraCandies)
+{
+
+        vector<bool> res;
+        bool found = true;
+
+        for (int i = 0; i < c.size(); i++)
+        {
+
+                int max = c[i] + extraCandies;
+
+                for (int j = 0; j < c.size(); j++)
+                {
+                        if (i == j)
+                                continue;
+
+                        if (max < c[j])
+                        {
+                                found = false;
+                                break;
+                        }
+                }
+                res.push_back(found);
+                found = true;
+        }
+
+        return res;
+}
+
 int main()
 {
 }

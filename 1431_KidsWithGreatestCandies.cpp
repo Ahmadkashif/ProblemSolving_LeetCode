@@ -30,34 +30,32 @@ vector<bool> kidsWithCandies(vector<int> &candies, int extraCandies)
         return results;
 }
 
-vector<bool> kidsWithCandies(vector<int> &c, int extraCandies)
-{
-
-        vector<bool> res;
+vector<bool> kidsWithCandies(vector<int>& c, int extraCandies) {
+        
+        vector<bool> res(c.size());
         bool found = true;
-
-        for (int i = 0; i < c.size(); i++)
-        {
-
-                int max = c[i] + extraCandies;
-
-                for (int j = 0; j < c.size(); j++)
-                {
-                        if (i == j)
-                                continue;
-
-                        if (max < c[j])
-                        {
-                                found = false;
-                                break;
-                        }
+            
+        for(int i = 0; i < c.size(); i++){
+            
+            int max = c[i] + extraCandies;
+            
+            for (int j = 0; j < c.size();j++)
+            {
+                if (i == j)
+                    continue;
+                
+                
+                if(max < c[j]){
+                    found = false;
+                    break;
                 }
-                res.push_back(found);
-                found = true;
+            }
+            res[i]=found;
+            found = true;
         }
-
+        
         return res;
-}
+    }
 
 int main()
 {

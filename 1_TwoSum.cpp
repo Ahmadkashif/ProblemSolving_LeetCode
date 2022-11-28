@@ -37,3 +37,25 @@ public:
         return result;
     }
 };
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        vector<int> res(2);
+        
+        for(int i  = 0 ; i < nums.size(); i++ ){
+            res[0] = i;
+            for(int j  = 0 ; j < nums.size(); j++ )
+            {
+                if(i == j)
+                    continue;
+                
+                res[1] = j;
+                
+                if(nums[res[0]]+nums[res[1]]==target)
+                    return res;
+            }
+        }
+        return res;
+    }
+};

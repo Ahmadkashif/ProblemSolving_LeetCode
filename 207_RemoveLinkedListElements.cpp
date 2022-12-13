@@ -8,18 +8,21 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-class Solution {
+class Solution
+{
 public:
-    ListNode* removeElements(ListNode* head, int v) {
-        ListNode* temp = head;
-       
-        while(temp){
-            if(temp->next && temp->next->val == v)
+    ListNode *removeElements(ListNode *head, int v)
+    {
+        ListNode *temp = head;
+
+        while (temp)
+        {
+            if (temp->next && temp->next->val == v)
                 temp->next = temp->next->next;
             else
                 temp = temp->next;
         }
-        if(head && head->val==v)
+        if (head && head->val == v)
             head = head->next;
 
         return head;

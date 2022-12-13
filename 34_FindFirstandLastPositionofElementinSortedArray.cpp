@@ -1,30 +1,40 @@
 class Solution {
 public:
     vector<int> searchRange(vector<int>& nums, int t) {
-        vector<int> res(2, -1);
-        int x = 0;
-        for(int i = 0; i < nums.size(); i++)
-            if( nums[i] == t){
-                res[x++] = i;
-                break;
-            }
-                
+        vector<int> res(2,-1);
+        int lower = 0, higher = 0;
         
-        for(int i = nums.size()-1; i >= 0; i--)
-            if(nums[i] == t)
-            {
-                res[x] = i;
-                break;
+        if( nums.size() != 0 ){
+            
+            int s = 0, e = nums.size()-1, mid = 0;
+
+            while( s <= e){
+
+                mid = (e-s)/2 + s;
+
+                if(nums[mid]==t){
+                    res[0] = mid;
+                    e = mid - 1;
+                }
+                else if(nums[mid] > t )
+                    e = mid - 1;
+                else
+                    s = mid + 1;
             }
+
+            s = 0, e = nums.size()-1, mid = 0;
+            while(s <= e ){
+                mid = (e-s)/2 + s;
+                if(nums[mid]==t){
+                    res[1] = mid;
+                    s = mid + 1;
+                }
+                else if(nums[mid] > t )
+                    e = mid - 1;
+                else
+                    s = mid + 1;
+            }
+        }
         return res;
     }
 };
-
-/*
-acceptance criteria:
-    find 2 things:
-        1. smallest index where nums[index] == t
-                smallest index is the first time nums[s] == t
-        2. largest index where nums[index] == t
-                largest index is the first time nums[e] == t
-*/

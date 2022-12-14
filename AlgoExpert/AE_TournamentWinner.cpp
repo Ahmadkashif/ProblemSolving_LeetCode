@@ -5,8 +5,11 @@ using namespace std;
 string tournamentWinner(vector<vector<string>> competitions, vector<int> results)
 {
     map<string, int> m;
+    
     string answer;
+
     int bestScore = 0;
+
     for (int i = 0; i < competitions.size(); i++)
     {
         if (results[i])

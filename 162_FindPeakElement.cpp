@@ -20,3 +20,29 @@ public:
         }
     }
 };
+
+class Solution {
+public:
+    int findPeakElement(vector<int>& nums) {
+        if( nums.size() == 0)
+            return 0;
+
+        int s = 0, e = nums.size() - 1, mid = 0;
+
+        while ( s < e - 1 ){
+            mid = (e - s)/2 + s;
+            if((nums[mid-1] < nums[mid] && nums[mid] > nums[mid+1]))
+                return mid;
+            else if ( nums[mid-1] > nums[mid] )
+                e = mid - 1;
+            else 
+                s = mid + 1;
+        }
+        return nums[s] > nums[e] ? s : e;
+    }
+};
+
+// [2,1,0,1,2]      s < e - 1
+    0 1 2 3 4
+
+// [1,2,3,1]        s < e

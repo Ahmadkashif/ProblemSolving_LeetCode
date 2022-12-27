@@ -9,21 +9,24 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-class Solution {
+class Solution
+{
 public:
     int maxDepthVal = 0;
-    void preOrder(TreeNode* root, int depth){
-        if(root==nullptr)
+    void preOrder(TreeNode *root, int depth)
+    {
+        if (root == nullptr)
             return;
-            
-        if(depth>maxDepthVal)
+
+        if (depth > maxDepthVal)
             maxDepthVal = depth;
 
-        preOrder(root->left, depth+1);
-        preOrder(root->right, depth+1);
+        preOrder(root->left, depth + 1);
+        preOrder(root->right, depth + 1);
     }
-    int maxDepth(TreeNode* root) {
+    int maxDepth(TreeNode *root)
+    {
         preOrder(root, 0);
-        return !root? maxDepthVal:maxDepthVal+1;
+        return !root ? maxDepthVal : maxDepthVal + 1;
     }
 };

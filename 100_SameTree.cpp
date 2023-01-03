@@ -1,4 +1,4 @@
-/**
+=/**
  * Definition for a binary tree node.
  * struct TreeNode {
  *     int val;
@@ -11,30 +11,14 @@
  */
 class Solution {
 public:
-    void traverse(TreeNode* root, vector<int> &arr){
-        if(root==nullptr){
-            arr.push_back(INT_MIN);
-            return;
-        }
-        arr.push_back(root->val);
-        traverse(root->left, arr);
-        traverse(root->right, arr);
-    }
+    
     bool isSameTree(TreeNode* p, TreeNode* q) {
-        vector<int> pArr;
-        vector<int> qArr;
-        traverse(p, pArr);
-        traverse(q, qArr);
-
-        if(pArr.size() == qArr.size())
-            for(int i = 0; i < pArr.size(); i++){
-                if (pArr[i] != qArr[i])
-                    break;
-                
-                if(i==pArr.size()-1)
-                    return true;
-            }
-
-        return false;
+        if(p==nullptr && q==nullptr)
+            return true;
+        if(p==nullptr || q==nullptr)
+            return false;
+        if(p->val != q->val)
+            return false;
+        return isSameTree(p->left, q->left) && isSameTree(p->right, q->right);
     }
 };

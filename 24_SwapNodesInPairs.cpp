@@ -10,6 +10,7 @@ ListNode *swapPairs(ListNode *head)
     ListNode *prev = NULL;
     ListNode *curr = head;
     int count = 0;
+    
     while (curr != NULL && count < 2)
     {
         forward = curr->next;

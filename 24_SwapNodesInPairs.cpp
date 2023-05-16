@@ -19,6 +19,6 @@ ListNode* swapPairs(ListNode* head) {
     if(forward != NULL){
         head->next = swapPairs(forward);
     }
-    //sb hogya abb return krde 
+    
     return prev;
 }

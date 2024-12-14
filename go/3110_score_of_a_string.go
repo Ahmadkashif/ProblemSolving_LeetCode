@@ -1,4 +1,5 @@
 func scoreOfString(s string) int {
+    
     score := 0.0
 
     byteArray := []byte(s)
